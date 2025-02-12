@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Layout from "./components/Layout";
-import Nav from "./components/Nav";
+import Nav from "./components/Nav"; // Keep this
+import Footer from "./components/Footer"; // Keep this
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
@@ -42,6 +43,7 @@ function App() {
           fugit esse, eos enim culpa...
         </p>
       </div>
+      <Footer />
     </Layout>
   );
 }
