@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import Layout from "./components/Layout";
+import Nav from "./components/Nav";
 
 function App() {
-  const themes = ["light", "dark", "red", "yellow", "blue", "green"];
-  const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
-  });
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -14,17 +12,8 @@ function App() {
 
   return (
     <Layout theme={theme}>
-      <div className={`flex gap-6 p-4 rounded-2xl`}>
-        {themes.map((t) => (
-          <button
-            key={t}
-            onClick={() => setTheme(t)}
-            className={`${t} cursor-pointer p-2 border rounded-lg w-[100px] `}
-          >
-            {t}
-          </button>
-        ))}
-      </div>
+      {/* Pass the theme and setTheme function to Nav */}
+      <Nav theme={theme} setTheme={setTheme} />
       <div
         className={`${theme} transition duration-300 ease-in-out flex gap-6 flex-col p-4`}
       >
@@ -33,7 +22,12 @@ function App() {
         <h1>Hello world</h1>
         <h1>Hello world</h1>
         <div>
-          <button className={`btn-${theme} `}>Click Me</button>
+          <button
+            className={`btn-${theme}`}
+            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+          >
+            Toggle Theme
+          </button>
           <input
             className={`input-${theme}`}
             type="text"
