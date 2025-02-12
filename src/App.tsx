@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import "./App.css";
 import Layout from "./components/Layout";
+import Footer from "./components/Footer";
 
 function App() {
   const themes = ["light", "dark", "red", "yellow", "blue", "green"];
@@ -49,6 +50,7 @@ function App() {
           fugit esse, eos enim culpa...
         </p>
       </div>
+      <Footer />
     </Layout>
   );
 }
