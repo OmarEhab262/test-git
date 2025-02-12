@@ -17,6 +17,7 @@ const Nav: React.FC<NavProps> = ({ setTheme }) => {
           {t}
         </button>
       ))}
+      <div>nice</div>
     </div>
   );
 };
