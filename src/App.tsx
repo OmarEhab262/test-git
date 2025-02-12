@@ -12,7 +12,6 @@ function App() {
 
   return (
     <Layout theme={theme}>
-      {/* Pass the theme and setTheme function to Nav */}
       <Nav theme={theme} setTheme={setTheme} />
       <div
         className={`${theme} transition duration-300 ease-in-out flex gap-6 flex-col p-4`}
