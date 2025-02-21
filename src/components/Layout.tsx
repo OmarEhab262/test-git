@@ -1,16 +1,19 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
+import Nav from "./Nav";
 
 interface LayoutProps {
   children: ReactNode;
-  theme: string;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children, theme }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
+  const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
+
   return (
     <div
-      className={`${theme} w-full min-h-screen transition duration-300 ease-in-out flex gap-6 flex-col p-4`}
+      className={` ${theme} w-full min-h-screen transition duration-300 ease-in-out flex gap-6 flex-col p-4`}
     >
-      {children}
+      <Nav theme={theme} setTheme={setTheme} />
+      <div className={theme}> {children}</div>
     </div>
   );
 };

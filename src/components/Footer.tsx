@@ -1,9 +1,22 @@
+import { useEffect } from "react";
+
 const Footer = () => {
   const theme = localStorage.getItem("theme") || "light";
+  useEffect(() => {
+    localStorage.getItem("theme");
+  }, [theme]);
+
   return (
     <>
       <footer>
-        <div className={`bg-bak-${theme}`}>ddddd</div>
+        <div
+          style={{
+            backgroundColor: `var(--color-${theme})`,
+            color: `var(--color-bak-${theme})`,
+          }}
+        >
+          ddddd
+        </div>
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="lg:flex lg:items-start lg:gap-8">
             <div className="">

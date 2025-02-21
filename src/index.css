@@ -11,6 +11,9 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Custom theme variables */
+  /* /* --font-display: "Satoshi", sans-serif; */
+}
+@theme {
   --font-display: "Satoshi", sans-serif;
   --color-yellow: #ffff00;
   --color-bak-yellow: #333333;
